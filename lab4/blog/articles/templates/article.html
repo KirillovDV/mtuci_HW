@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ post.title }}</title>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body class="article">
+  <div class="header">
+    <a class="all-posts" href="/">Все статьи</a>
+    <img src="{% static 'img/cat.jpeg' %}" alt="Логотип блога">
+  </div>
+
+  <div class="content">
+    <h1 class="post-title">{{ post.title }}</h1>
+    <div class="article-info">
+      <div class="article-author">Автор: {{ post.author.username }}</div>
+      <div class="article-created-date">Опубликовано: {{ post.created_date|date:"d.m.Y" }}</div>
+    </div>
+    <div class="article-text">{{ post.text|linebreaks }}</div>
+  </div>
+</body>
+</html>
