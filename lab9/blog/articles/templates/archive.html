@@ -9,12 +9,13 @@
 </head>
 <body>
 <div class="header">
+    <div class="header-parallax" data-speed="0.5"></div>
     <a class="all-posts" href="/">Все статьи</a>
-    <img src="{% static 'img/cat.jpeg' %}" alt="Логотип блога">
-    <h1 class="archive-title">Архив статей</h1>
+    <img src="{% static 'img/cat.jpeg' %}" alt="Логотип блога" class="header-element" data-speed="0.3">
+    <h1 class="archive-title header-element" data-speed="0.2">Архив статей</h1>
     <div class="auth-buttons">
-        <a href="/login/" class="auth-button login">Вход</a>
-        <a href="/register/" class="auth-button register">Регистрация</a>
+        <a href="/login/" class="auth-button header-element" data-speed="0.1">Войти</a>
+        <a href="/register/" class="auth-button header-element" data-speed="0.1">Регистрация</a>
     </div>
 </div>
 
@@ -39,6 +40,7 @@
     {% endfor %}
 </div>
 <script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/parallax.js' %}"></script>
 <script src="{% static 'js/helloworld.js' %}"></script>
 <script src="{% static 'js/highlight-post.js' %}"></script>
 </body>
