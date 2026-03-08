@@ -16,24 +16,30 @@
 
 <div class="archive">
     {% for post in posts %}
-<div class="one-post">
+    <div class="one-post">
+        <div class="one-post-shadow"></div>
         <h2 class="post-title">
-          <a href="{% url 'get_article' article_id=post.id %}">{{ post.title }}</a>
+            <a href="{% url 'get_article' article_id=post.id %}">{{ post.title }}</a>
         </h2>
 
         <div class="article-info">
-          <div class="article-author">Автор: {{ post.author.username }}</div>
-          <div class="article-created-date">Опубликовано: {{ post.created_date|date:"d.m.Y" }}</div>
+            <div class="article-author">Автор: {{ post.author.username }}</div>
+            <div class="article-created-date">Опубликовано: {{ post.created_date|date:"d.m.Y" }}</div>
         </div>
 
         <div class="article-text">{{ post.get_excerpt|linebreaks }}</div>
-        
-        <button class="fold-button">Свернуть</button>
+
+        <button type="button" class="fold-button">Свернуть</button>
         <a href="{% url 'get_article' article_id=post.id %}" class="read-more">Читать далее →</a>
-        <div class="one-post-shadow"></div>
-      </div>
+    </div>
     {% endfor %}
 </div>
+<script src="{% static 'js/jquery.js' %}"></script>
 <script src="{% static 'js/helloworld.js' %}"></script>
+<script src="{% static 'js/highlight-post.js' %}"></script>
 </body>
 </html>
+
+
+
+
